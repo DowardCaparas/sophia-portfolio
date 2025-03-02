@@ -4,7 +4,7 @@ import { certificates, expertise, imesAccomplishments } from "./constants";
 
 export default function Home() {
   const navLinks = [
-    { label: "About", id: "#about" },
+    { label: "Experties", id: "#experties" },
     { label: "Experience", id: "#experience" },
     { label: "Certificates", id: "#certificates" },
   ];
@@ -13,9 +13,13 @@ export default function Home() {
     <div className="overflow-hidden">
       <nav className="h-16 bg-blue-900 nav_padding flex justify-between items-center fixed w-full">
         <span className="text-white text-xl font-bold">SJDG</span>
-        <ul className="max-md:hidden">
+        <ul>
           {navLinks.map((link) => (
-            <Link href={link.id} key={link.id} className="text-white ml-6">
+            <Link
+              href={link.id}
+              key={link.id}
+              className="text-white ml-6 hover:text-gray-200"
+            >
               {link.label}
             </Link>
           ))}
@@ -34,10 +38,10 @@ export default function Home() {
             <span>Pacakge App Dev</span>
           </div>
           <p className="lg:w-[70%]">
-            I graduated as Magna Cum Laude with the degree of Bachlor of Science
-            in Information Technology at Cavite State University - Naic Campus.
-            I&apos;m Currently an Associate Software Engineer at Accenture in the
-            Philippines Manila.
+            I graduated as Magna Cum Laude with the degree of Bachelor of
+            Science in Information Technology at Cavite State University - Naic
+            Campus. I&apos;m currently an Associate Software Engineer at
+            Accenture in the Philippines Manila.
           </p>
           <Link
             href="https://www.linkedin.com/in/sophia-joyce-garcia-56ba442a4/"
@@ -64,21 +68,11 @@ export default function Home() {
         />
       </section>
 
-      {/* About section */}
+      {/* Experties section */}
       <section
-        id="about"
+        id="experties"
         className="sections bg-gray-100 container_padding py-16 flex flex-col gap-6"
       >
-        <span className="text-xl font-bold">ABOUT</span>
-        <p>
-          Strong technology professional with a Bachelor of Science (B.S.)
-          focused in Information Technology from Cavite State University &#8209;
-          Naic Campus, graduated with Latin honors (Magna Cum Laude).
-          Experienced as Information Technology Intern at P.IMES Corp. in
-          Cavite. Currently an Associate Software Engineer at Accenture in
-          Manila and part of the Oracle ERP Cloud Capability Platform and AIST
-          Japan Project.
-        </p>
         <span className="font-medium text-2xl">Expertise</span>
         <div>
           {expertise.map((item, index) => (
@@ -164,18 +158,18 @@ export default function Home() {
       >
         <span className="text-xl font-bold">Certificates</span>
         <div className="flex flex-col gap-20 mt-8">
-        {certificates.map((certificate) => (
-          <div key={certificate.title} className="text-center">
-            <Image
-              src={certificate.imgURL}
-              alt={certificate.title}
-              width={600}
-              height={600}
-              className="object-contain mx-auto mb-2"
-            />
-            <span className="text-xl">{certificate.title}</span>
-          </div>
-        ))}
+          {certificates.map((certificate) => (
+            <div key={certificate.title} className="text-center">
+              <Image
+                src={certificate.imgURL}
+                alt={certificate.title}
+                width={650}
+                height={650}
+                className="object-contain mx-auto mb-2"
+              />
+              <span className="text-xl">{certificate.title}</span>
+            </div>
+          ))}
         </div>
       </section>
       <footer className="bg-blue-900 p-2 text-white text-center text-sm">

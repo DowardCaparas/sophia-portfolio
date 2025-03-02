@@ -37,13 +37,13 @@ export const imesAccomplishments = [
 
 export const certificates = [
   {
+    title: "Oracle Financials Business Process Foundations Associate Rel 2",
+    imgURL: "/images/certificate02.png",
+  },
+  {
     title:
       "Oracle Sales Business Process Certified Foundations Associate Rel 2",
     imgURL: "/images/certificate01.png",
-  },
-  {
-    title: "Oracle Financials Business Process Foundations Associate Rel 2",
-    imgURL: "/images/certificate02.png",
   },
   
 ];
