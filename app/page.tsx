@@ -35,7 +35,7 @@ export default function Home() {
             <span className="font-medium text-xl">
               Associate Software Engineer
             </span>
-            <span>Pacakge App Dev</span>
+            <span>Package App Dev</span>
           </div>
           <p className="lg:w-[70%]">
             I graduated as Magna Cum Laude with the degree of Bachelor of
