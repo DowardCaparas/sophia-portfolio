@@ -4,7 +4,7 @@ import { certificates, expertise, imesAccomplishments } from "./constants";
 
 export default function Home() {
   const navLinks = [
-    { label: "Experties", id: "#experties" },
+    { label: "Expertise", id: "#expertise" },
     { label: "Experience", id: "#experience" },
     { label: "Certificates", id: "#certificates" },
   ];
@@ -68,9 +68,9 @@ export default function Home() {
         />
       </section>
 
-      {/* Experties section */}
+      {/* Expertise section */}
       <section
-        id="experties"
+        id="expertise"
         className="sections bg-gray-100 container_padding py-16 flex flex-col gap-6"
       >
         <span className="font-medium text-2xl">Expertise</span>
