@@ -36,7 +36,7 @@ export default function Home() {
           <p className="lg:w-[70%]">
             I graduated as Magna Cum Laude with the degree of Bachlor of Science
             in Information Technology at Cavite State University - Naic Campus.
-            I'm Currently an Associate Software Engineer at Accenture in the
+            I&apos;m Currently an Associate Software Engineer at Accenture in the
             Philippines Manila.
           </p>
           <Link
