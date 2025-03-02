@@ -64,7 +64,7 @@ export default function Home() {
           alt="Sophia Joyce Garcia"
           width={380}
           height={380}
-          className="rounded-full object-contain border-8 border-blue-500 p-2"
+          className="rounded-full object-contain border-4 border-gray-300 p-2"
         />
       </section>
 
