@@ -232,7 +232,7 @@ export default function Home() {
         </section>
 
         {/* Achievements section */}
-        <section id="achievements" className="sections container_padding py-16">
+        <section id="achievements" className="sections container_padding py-16 mb-10">
           <span className="font-medium text-2xl">Achievements</span>
           <div className="grid md:grid-cols-2 grid-cols-1 gap-6 mt-6">
             {achievements.map((achievement) => (
