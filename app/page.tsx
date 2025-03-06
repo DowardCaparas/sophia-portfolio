@@ -13,7 +13,7 @@ import {
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [isOpen, setisOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     AOS.init({ duration: 500 });
@@ -31,7 +31,13 @@ export default function Home() {
     <>
       <div className="overflow-hidden">
         <nav className="h-16 bg-blue-900 nav_padding flex justify-between items-center fixed w-full z-10">
-          <span className="text-white text-xl font-bold">SJDG</span>
+          <button
+            className="text-white text-xl font-bold cursor-pointer"
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
+            SJDG
+          </button>
+
           <ul className="max-md:hidden">
             {navLinks.map((link) => (
               <Link
@@ -46,7 +52,7 @@ export default function Home() {
           {!isOpen && (
             <button
               className="md:hidden block bg-white p-2 rounded-md hover:bg-gray-100 active:bg-gray-200"
-              onClick={() => setisOpen((prev) => !prev)}
+              onClick={() => setIsOpen((prev) => !prev)}
             >
               <Image
                 src="/hamburger.svg"
@@ -71,7 +77,7 @@ export default function Home() {
               <span className="font-medium text-xl">
                 Associate Software Engineer
               </span>
-              <span>Package App Dev</span>
+              <span>Packaged App Dev</span>
             </div>
             <p className="lg:w-[70%]">
               I graduated as Magna Cum Laude with the degree of Bachelor of
@@ -254,34 +260,39 @@ export default function Home() {
       </div>
       {isOpen && (
         <div
-          data-aos="fade-left"
-          className="fixed top-0 right-0 h-full w-[60%] max-w-xs bg-white shadow-lg z-50 p-5 
-        transition-transform duration-300 ease-in-out transform translate-x-0"
+          className="fixed inset-0 z-50"
+          onClick={() => setIsOpen(false)} // Close when clicking outside
         >
-          <button
-            onClick={() => setisOpen(false)}
-            className="absolute top-3 right-3 bg-white p-2 rounded-md hover:bg-gray-100 active:bg-gray-200"
+          <div
+            data-aos="fade-left"
+            className="absolute top-0 right-0 h-full w-[60%] max-w-xs bg-white shadow-lg p-5 transition-transform duration-300 ease-in-out transform translate-x-0"
+            onClick={(e) => e.stopPropagation()} // Prevent closing when clicking inside
           >
-            <Image
-              src="/close.svg"
-              alt="Menu icon"
-              width={25}
-              height={25}
-              className="object-contain"
-            />
-          </button>
-          <ul className="flex flex-col gap-5 mt-10">
-            {navLinks.map((link) => (
-              <Link
-                key={link.id}
-                href={link.id}
-                className="text-lg text-gray-800 hover:text-blue-600 transition"
-                onClick={() => setisOpen(false)} // Close sidenav when clicking a link
-              >
-                {link.label}
-              </Link>
-            ))}
-          </ul>
+            <button
+              onClick={() => setIsOpen(false)}
+              className="absolute top-3 right-3 bg-white p-2 rounded-md hover:bg-gray-100 active:bg-gray-200"
+            >
+              <Image
+                src="/close.svg"
+                alt="Close icon"
+                width={25}
+                height={25}
+                className="object-contain"
+              />
+            </button>
+            <ul className="flex flex-col gap-5 mt-10">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.id}
+                  href={link.id}
+                  className="text-lg text-gray-800 hover:text-blue-600 transition"
+                  onClick={() => setIsOpen(false)} // Close when clicking a link
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </ul>
+          </div>
         </div>
       )}
     </>
