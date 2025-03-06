@@ -45,5 +45,19 @@ export const certificates = [
       "Oracle Sales Business Process Certified Foundations Associate Rel 2",
     imgURL: "/images/certificate01.png",
   },
-  
+];
+
+export const achievements = [
+  {
+    title: "Magna Cum Laude",
+    description: "I graduated Magna Cum Laude with a BSc in Information Technology from Cavite State University - Naic.",
+    date: "Feb. 2024",
+    organization: "Cavite State University - Naic",
+  },
+  {
+    title: "Best Capstone",
+    description: "Title: Simian, A Mobile Educational Game for Primary Level in Learning Space Science",
+    date: "Aug. 2023",
+    organization: "Cavite State University - Naic",
+  },
 ];
